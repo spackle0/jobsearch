@@ -44,3 +44,8 @@ dbmigrate:
 format:
 	poetry run isort --skip migrations ${APP_NAME}
 	poetry run black --exclude="migrations/" ${APP_NAME}
+
+.PHONY: sec
+sec:
+	poetry run bandit ./intertraq
+	poetry run pyt -a D ./intertraq

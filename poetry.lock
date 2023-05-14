@@ -571,6 +571,18 @@ pytest = ">=5.0"
 dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
+name = "python-taint"
+version = "0.42"
+description = "Find security vulnerabilities in Python web applications using static analysis."
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "python-taint-0.42.tar.gz", hash = "sha256:87d2647e22a086251471ca4762d97410f82b709d698925395e7010aa3ca483dd"},
+    {file = "python_taint-0.42-py3-none-any.whl", hash = "sha256:2fadece30f51d4697fbc10148fe6fa663d9e034e426a876fa3ef5e09fe2c1c57"},
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
@@ -819,4 +831,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b6dfc7a5558c9a9a8dec85efa88cfad9ecdb4778e8b9a89d56cf4099e5d9a48a"
+content-hash = "8d2cc61833001764b39eadbafb541e9845c5990d047366a866a0f9fee4b855a9"
