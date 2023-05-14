@@ -28,6 +28,9 @@ exclude-too-few-public-methods=true
 [tool.pylint.format]
 max-line-length=120
 
+[tool.pytest]
+addopts="-ra --tb=short -v --capture=no --setup-show"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.2.1"
@@ -43,6 +46,8 @@ bandit = "^1.7.5"
 pylint = "^2.17.4"
 black = "^23.3.0"
 python-taint = "^0.42"
+setuptools = "^67.7.2"
+pytest-django = "^4.5.2"
 
 [build-system]
 requires = ["poetry-core"]
