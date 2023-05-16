@@ -1,0 +1,7 @@
+# Third Party Libraries
+from django.apps import AppConfig
+
+
+class IntertraqConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "intertraq"
