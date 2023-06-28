@@ -25,6 +25,11 @@ class JobAdmin(admin.ModelAdmin):
 
 @admin.register(CommunicationLog)
 class CommunicationLogAdmin(admin.ModelAdmin):
+    @admin.display(description='Date')
+    def date_display(self, obj):
+        return obj.date.strftime('%Y-%m-%d')
+
+    list_display = ("date_display", "recruiter", "job", "message")
     fields = ("date", "recruiter", "job", "message")
     search_fields = ["date", "job__title", "recruiter__name"]
-    list_display = ("date", "recruiter", "job", "message")
+

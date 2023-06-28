@@ -28,6 +28,7 @@ class Company(models.Model):
 class Job(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
+    job_url = models.URLField(max_length=200, null=True, blank=True)
     company = models.ForeignKey("Company", on_delete=models.CASCADE)
     recruiter = models.ForeignKey("Recruiter", on_delete=models.SET_NULL, null=True)
     posted_date = models.DateTimeField(auto_now_add=True)
