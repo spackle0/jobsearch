@@ -12,8 +12,14 @@ class Recruiter(models.Model):
 
 
 class Company(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=255, blank=True)
+    industry = models.CharField(max_length=100, blank=True)
+
+    # new fields
+    phone_number = models.CharField(max_length=15, blank=True)
+    website = models.URLField(max_length=200, null=True, blank=True)
+    email = models.EmailField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -44,7 +50,7 @@ class CommunicationLog(models.Model):
     recruiter = models.ForeignKey("Recruiter", on_delete=models.CASCADE)
     job = models.ForeignKey("Job", on_delete=models.CASCADE, null=True, blank=True)
     message = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True, editable=True)
 
     def __str__(self):
         return f"{self.recruiter.name} - {self.message[:50]}..."
