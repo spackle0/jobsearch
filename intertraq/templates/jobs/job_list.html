@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Jobs</h1>
+  <ul>
+  {% for job in jobs %}
+    <li>
+      <h2>{{ job.title }}</h2>
+      <p>Company: {{ job.company.name }}</p>
+      <p>Recruiter: {{ job.recruiter.name }}</p>
+      <p>{{ job.description }}</p>
+    </li>
+  {% empty %}
+    <li>No jobs available.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

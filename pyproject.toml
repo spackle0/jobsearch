@@ -11,9 +11,6 @@ line-length = 120
 target-version = ['py310']
 
 [tool.isort]
-import_heading_stdlib="Standard Library"
-import_heading_thirdparty="Third Party Libraries"
-import_heading_firstparty="Custom Libraries"
 combine_as_imports=true
 combine_star=true
 skip_gitignore=true
