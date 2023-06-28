@@ -25,4 +25,6 @@ class JobAdmin(admin.ModelAdmin):
 
 @admin.register(CommunicationLog)
 class CommunicationLogAdmin(admin.ModelAdmin):
-    pass
+    fields = ("date", "recruiter", "job", "message")
+    search_fields = ["date", "job__title", "recruiter__name"]
+    list_display = ("date", "recruiter", "job", "message")

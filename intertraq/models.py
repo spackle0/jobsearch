@@ -1,5 +1,6 @@
 # Third Party Libraries
 from django.db import models
+from django.utils import timezone
 
 
 class Recruiter(models.Model):
@@ -49,7 +50,7 @@ class CommunicationLog(models.Model):
     recruiter = models.ForeignKey("Recruiter", on_delete=models.CASCADE)
     job = models.ForeignKey("Job", on_delete=models.CASCADE, null=True, blank=True)
     message = models.TextField()
-    date = models.DateTimeField(auto_now=True, editable=True)
+    date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return f"{self.recruiter.name} - {self.message[:50]}..."
