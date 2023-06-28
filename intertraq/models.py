@@ -6,6 +6,7 @@ class Recruiter(models.Model):
     name = models.CharField(max_length=200)
     is_independent = models.BooleanField()
     company = models.ForeignKey("Company", on_delete=models.SET_NULL, null=True, blank=True)
+    email = models.EmailField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -16,10 +17,8 @@ class Company(models.Model):
     address = models.CharField(max_length=255, blank=True)
     industry = models.CharField(max_length=100, blank=True)
 
-    # new fields
     phone_number = models.CharField(max_length=15, blank=True)
     website = models.URLField(max_length=200, null=True, blank=True)
-    email = models.EmailField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.name
