@@ -187,6 +187,26 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-phonenumber-field"
+version = "7.1.0"
+description = "An international phone number field for django models."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-phonenumber-field-7.1.0.tar.gz", hash = "sha256:63721dbdc7424cd594a08d80f550e790cf6e7c903cbc0fb4dd9d86baac8b8c51"},
+    {file = "django_phonenumber_field-7.1.0-py3-none-any.whl", hash = "sha256:4eaab35fe9a163046dc3a47188771385c56a788e0e11b7bbcc662e1e6b7b9104"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+phonenumberslite = {version = ">=7.0.2", optional = true, markers = "extra == \"phonenumberslite\""}
+
+[package.extras]
+phonenumbers = ["phonenumbers (>=7.0.2)"]
+phonenumberslite = ["phonenumberslite (>=7.0.2)"]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.1.1"
 description = "Backport of PEP 654 (exception groups)"
@@ -419,6 +439,18 @@ python-versions = ">=2.6"
 files = [
     {file = "pbr-5.11.1-py2.py3-none-any.whl", hash = "sha256:567f09558bae2b3ab53cb3c1e2e33e726ff3338e7bae3db5dc954b3a44eef12b"},
     {file = "pbr-5.11.1.tar.gz", hash = "sha256:aefc51675b0b533d56bb5fd1c8c6c0522fe31896679882e1c4c63d5e4a0fccb3"},
+]
+
+[[package]]
+name = "phonenumberslite"
+version = "8.13.15"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "phonenumberslite-8.13.15-py2.py3-none-any.whl", hash = "sha256:87434233270bee76d6624f9e256688fa4c2ecb1b235f7c9275446b8978f7de8d"},
+    {file = "phonenumberslite-8.13.15.tar.gz", hash = "sha256:35e48d547c38b9e2d62d77a2f91ef628a98f184c474ce453dff001978312a16b"},
 ]
 
 [[package]]
@@ -871,4 +903,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "eaed366250696054de61e2ab5e8184962272b9be7ecf41048ddaad44557e06ae"
+content-hash = "ac04cf21d00b666ff43500893a69ed99e2166bb57229e1d3ae5ba6e29135fabd"
