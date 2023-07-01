@@ -29,6 +29,6 @@ class CommunicationLogAdmin(admin.ModelAdmin):
     def date_display(self, obj):
         return obj.date.strftime("%Y-%m-%d")
 
-    list_display = ("date_display", "recruiter", "job", "message")
-    fields = ("date", "recruiter", "job", "message")
+    list_display = ("date_display", "recruiter", "job", "log_entry")
+    fields = ("date", "recruiter", "job", "log_entry")
     search_fields = ["date", "job__title", "recruiter__name"]
