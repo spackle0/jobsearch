@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Recruiters</h1>
+  <ul>
+  {% for recruiter in recruiters %}
+    <li>{{ recruiter.name }}: {{ recruiter.company }}</li>
+  {% empty %}
+    <li>No recruiters available.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

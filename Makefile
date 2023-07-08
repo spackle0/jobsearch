@@ -49,3 +49,9 @@ format:
 sec:
 	poetry run bandit ./intertraq
 	poetry run pyt -a D ./intertraq
+
+.PHONY: mksu
+mksu:
+	poetry run python manage.py createsuperuser
+
+
