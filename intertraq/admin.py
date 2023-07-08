@@ -14,7 +14,7 @@ class InterviewAdmin(admin.ModelAdmin):
 
 
 @admin.register(Recruiter)
-class RegisterAdmin(admin.ModelAdmin):
+class RecruiterAdmin(admin.ModelAdmin):
     pass
 
 
