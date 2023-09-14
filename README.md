@@ -6,7 +6,7 @@
 
 ## Intertraq
 
-A Django application for tracking during your job hung
+A Django application for tracking during your job hunt
 
 * Jobs applied for
 * Recruiters
