@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.translation import gettext_lazy as _
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Recruiter(models.Model):
@@ -54,16 +54,18 @@ class Interview(models.Model):
 class CommunicationLog(models.Model):
     class CommsType(models.TextChoices):
         EMAIL = "EM", _("E-mail")
+        LINKEDIN = "LI", _("LinkedIn Message")
         PHONE_CALL = "PC", _("Phone call")
         ZOOM_CALL = "ZC", _("Zoom call")
+
     date = models.DateField(default=timezone.now)
     recruiter = models.ForeignKey("Recruiter", on_delete=models.CASCADE)
     job = models.ForeignKey("Job", on_delete=models.CASCADE, null=True, blank=True)
     log_entry = models.TextField()
     log_type = models.CharField(
-            max_length=2,
-            choices=CommsType.choices,
-            default=CommsType.EMAIL,
+        max_length=2,
+        choices=CommsType.choices,
+        default=CommsType.EMAIL,
     )
 
     def __str__(self):
