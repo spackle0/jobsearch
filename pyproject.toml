@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.black]
 line-length = 120
-target-version = ['py311']
+target-version = ['py312']
 
 [tool.isort]
 combine_as_imports=true
@@ -29,10 +29,10 @@ max-line-length=120
 addopts="-ra --tb=short -v --capture=no --setup-show"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-django = "^4.2.1"
+python = "^3.12"
+django = "^4.2.9"
 python-decouple = "^3.8"
-django-phonenumber-field = {extras = ["phonenumberslite"], version = "^7.1.0"}
+django-phonenumber-field = {extras = ["phonenumberslite"], version = "^7.3.0"}
 
 
 [tool.poetry.group.dev.dependencies]
