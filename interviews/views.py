@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def company_list(request):
+    return render(request, 'interviews/company/list.html', {})
