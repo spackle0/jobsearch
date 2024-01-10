@@ -54,10 +54,17 @@ class Interview(models.Model):
 class CommunicationLog(models.Model):
     class CommsType(models.TextChoices):
         EMAIL = "EM", _("E-mail")
-        LINKEDIN = "LI", _("LinkedIn Message")
+        LINKEDIN = "LI", _("LinkedIn message")
         PHONE_CALL = "PC", _("Phone call")
-        ZOOM_CALL = "ZC", _("Zoom call")
+        VIDEO_CALL = "VC", _("Video call")
+        TEXT_MESSAGE = "TM", _("Text message")
+        OTHER = "OT", _("Other")
 
+    comms_type = models.CharField(
+        max_length=2,
+        choices=CommsType.choices,
+        default=CommsType.EMAIL,
+    )
     date = models.DateField(default=timezone.now)
     recruiter = models.ForeignKey("Recruiter", on_delete=models.CASCADE)
     job = models.ForeignKey("Job", on_delete=models.CASCADE, null=True, blank=True)

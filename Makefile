@@ -53,5 +53,3 @@ sec:
 .PHONY: mksu
 mksu:
 	poetry run python manage.py createsuperuser
-
-
