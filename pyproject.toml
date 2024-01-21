@@ -20,7 +20,7 @@ skip_gitignore=true
 star_first=true
 
 [tool.pylint.basic]
-dostring-min-length=10
+docstring-min-length=10
 
 [tool.pylint.design]
 exclude-too-few-public-methods=true
