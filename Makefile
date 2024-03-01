@@ -1,5 +1,5 @@
 PROJECT_NAME=jobsearch
-APP_NAME=intertraq
+APP_NAME=interviews
 VERSION=0.1.0
 # For build process, minimum test coverage required to pass testing
 MIN_COVERAGE=0
