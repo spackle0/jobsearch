@@ -1,0 +1,44 @@
+{% extends "interviews/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container">
+        <h1>Add/Edit Communication Log</h1>
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.comms_type.id_for_label }}">{{ form.comms_type.label }}</label>
+                {{ form.comms_type|add_class:"form-control" }}
+                {{ form.comms_type.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
+                {{ form.date|add_class:"form-control" }}
+                {{ form.date.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.recruiter.id_for_label }}">{{ form.recruiter.label }}</label>
+                {{ form.recruiter|add_class:"form-control" }}
+                {{ form.recruiter.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.job.id_for_label }}">{{ form.job.label }}</label>
+                {{ form.job|add_class:"form-control" }}
+                {{ form.job.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.log_entry.id_for_label }}">{{ form.log_entry.label }}</label>
+                {{ form.log_entry|add_class:"form-control" }}
+                {{ form.log_entry.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.log_type.id_for_label }}">{{ form.log_type.label }}</label>
+                {{ form.log_type|add_class:"form-control" }}
+                {{ form.log_type.errors }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
