@@ -15,7 +15,7 @@
         </tr>
         {% for company in companies %}
         <tr>
-            <td>{{ company.name }}</td>
+            <td><a href="{% url "interviews:company_detail" company.id %}">{{ company.name }}</a></td>
             <td>{{ company.address }}</td>
             <td>{{ company.industry }}</td>
             <td>{{ company.phone_number }}</td>

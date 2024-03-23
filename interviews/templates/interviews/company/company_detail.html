@@ -1,0 +1,13 @@
+{% extends "interviews/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <h1>{{ company.name }}</h1>
+    <p><strong>Address:</strong> {{ company.address }}</p>
+    <p><strong>Industry:</strong> {{ company.industry }}</p>
+    <p><strong>Phone Number:</strong> {{ company.phone_number }}</p>
+    <p><strong>Website:</strong> <a href="{{ company.website }}">{{ company.website }}</a></p>
+    <p><strong>Employer:</strong> {{ company.employer|yesno:"Yes,No" }}</p>
+    <a href="{% url "interviews:company_list" %}">Back to list</a>
+{% endblock %}
