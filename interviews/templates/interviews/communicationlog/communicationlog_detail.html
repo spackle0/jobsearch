@@ -1,0 +1,14 @@
+{% extends "interviews/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <h1>Communication Log Detail</h1>
+    <p><strong>Type:</strong> {{ log.get_comms_type_display }}</p>
+    <p><strong>Date:</strong> {{ log.date }}</p>
+    <p><strong>Recruiter:</strong> {{ log.recruiter.name }}</p>
+    <p><strong>Job:</strong> {{ log.job.title if log.job else "N/A" }}</p>
+    <p><strong>Entry:</strong> {{ log.log_entry }}</p>
+    <p><strong>Log Type:</strong> {{ log.get_log_type_display }}</p>
+    <a href="{% url "interviews:communicationlog_list" %}">Back to list</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "interviews/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <h1>Communication Log</h1>
+    <ul>
+        {% for log in communication_logs %}
+        <li>
+            <a href="{% url 'interviews:communication_log_detail' log.id %}">
+                {{ log }}
+            </a>
+        </li>
+        {% empty %}
+        <li>No communication logs found.</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}

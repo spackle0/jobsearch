@@ -8,12 +8,9 @@ readme = "README.md"
 
 [tool.black]
 line-length = 120
-target-version = ['py310']
+target-version = ['py312']
 
 [tool.isort]
-import_heading_stdlib="Standard Library"
-import_heading_thirdparty="Third Party Libraries"
-import_heading_firstparty="Custom Libraries"
 combine_as_imports=true
 combine_star=true
 skip_gitignore=true
@@ -32,9 +29,11 @@ max-line-length=120
 addopts="-ra --tb=short -v --capture=no --setup-show"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-django = "^4.2.1"
-decouple = "^0.0.7"
+python = "^3.12"
+django = "^4.2.9"
+python-decouple = "^3.8"
+django-phonenumber-field = {extras = ["phonenumberslite"], version = "^7.3.0"}
+django-widget-tweaks = "^1.5.0"
 
 
 [tool.poetry.group.dev.dependencies]

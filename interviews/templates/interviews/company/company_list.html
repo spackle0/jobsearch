@@ -1,0 +1,31 @@
+{% extends "interviews/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <h1>Company List</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Industry</th>
+            <th>Phone Number</th>
+            <th>Website</th>
+            <th>Employer</th>
+        </tr>
+        {% for company in companies %}
+        <tr>
+            <td><a href="{% url "interviews:company_detail" company.id %}">{{ company.name }}</a></td>
+            <td>{{ company.address }}</td>
+            <td>{{ company.industry }}</td>
+            <td>{{ company.phone_number }}</td>
+            <td><a href="{{ company.website }}">{{ company.website }}</a></td>
+            <td>{{ company.employer|yesno:"Yes,No" }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No companies found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

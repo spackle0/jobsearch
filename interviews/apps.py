@@ -1,7 +1,6 @@
-# Third Party Libraries
 from django.apps import AppConfig
 
 
-class IntertraqConfig(AppConfig):
+class InterviewsConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "intertraq"
+    name = "interviews"
